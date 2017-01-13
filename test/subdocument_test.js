@@ -5,16 +5,16 @@ describe('Subdocuments', () => {
   it('can create a subdocuments', (done) => {
     const joe = new User({
       name: 'Joe',
-      posts: [{ title: 'PostTitle'}]
-   });
+      posts: [{ title: 'PostTitle' }],
+    });
 
-   joe.save()
+    joe.save()
     .then(() => {
-        return User.findOne({name: 'Joe'})
+      return User.findOne({ name: 'Joe' });
     })
     .then((user) => {
-        assert(user.posts[0].title === 'PostTitle');
-        done();
-    });
+      assert(user.posts[0].title === 'PostTitle');
+      done();
     });
   });
+});

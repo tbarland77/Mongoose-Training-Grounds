@@ -11,9 +11,9 @@ before((done) => {
     });
 });
 
-beforeEach( (done) => {
+beforeEach((done) => {
   // removes any database entries to prepare for the next test
-  mongoose.connection.collections.users.drop( () => {
+  mongoose.connection.collections.users.drop(() => {
     done();
   });
 });

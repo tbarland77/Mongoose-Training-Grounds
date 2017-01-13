@@ -5,7 +5,7 @@ describe('Reading records', () => {
   let joe;
   // before each test create an instance of the user model/class called joe
   beforeEach((done) => {
-    joe = new User({ name: 'Joe'});
+    joe = new User({ name: 'Joe' });
     joe.save()
       .then(() => done());
   });
@@ -20,7 +20,7 @@ describe('Reading records', () => {
   });
 
   it('find a user with a particular id', (done) => {
-    User.findOne({ _id: joe._id})
+    User.findOne({ _id: joe._id })
       .then((user) => {
         assert(user.name === 'Joe');
         done();
